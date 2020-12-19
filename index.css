@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+:root{
+    --main-dark-bg-color: darkslateblue;
+    --main-dark-font-color:white;
+    --active : green;
+    --rrTransValue : calc(50vw + 3rem);
+    --rlTransValue : calc(-50vw - 3rem);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:var(--main-dark-bg-color);
+    height:100%;
+    width:100%;
+}
+img{
+    height: 4rem;
+    width: 4rem;
+    border-radius:50%;
+}
+.navbar{
+    background-color: #0B7CED;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+.navbar > a{
+    text-decoration: none;
+    font-size: 2em;
+    color:rgb(81, 12, 128);
+
+}
+nav ul{
+    display:flex;
+    font-size: 1.3em;
+    list-style-type: none;
+}
+.navbar li a{
+    text-decoration: none;
+    padding: 15px;
+    color:rgb(81, 12, 128);
+
+}
+section{
+    text-align: center;
+}
+main{
+    position:relative;
+}
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 3;
+
+}
+.player-info{
+    color:var(--main-dark-font-color);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.player-info h1{
+    /* position:relative; */
+    z-index:5;
+    margin:2rem;
+    font-size: 2.5em;
+    font-weight:700;
+}
+.result{
+    font-size: 2em;
+}
+
+.scores{
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+    border: 2px solid white;
+    width: 10rem;
+    height: 4rem;
+    padding:10px;
+}
+
+.score:first-of-type::after{
+    font-family: 'Orbitron', sans-serif;
+    content:":";
+    position:absolute;
+    right:-5px;
+    top:70%;
+    transform:translate(0,-50%);
+    font-size:3em;
+    font-weight:600;
+
+}
+.scores span{
+    position:absolute;
+    font-size:1.3em;
+    top:-15px;
+    left:50%;
+    transform: translate(-50%);
+    background-color:var(--main-dark-bg-color) ;
+    padding: 0 3px;
+    white-space: nowrap;
+}
+.score{
+    position:relative;
+    flex-wrap: none;
+    flex-basis: 50%;
+}
+.score p:nth-child(2){
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+}
+
+.gameplay{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    color:var(--main-dark-font-color);
+}
+.icons{
+    margin:2rem;
+    position:absolute;
+    left:50%;
+    top:50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;
+}
+.icons img{
+    height: 7rem;
+    width: 7rem;
+    flex-basis: 2rem;
+    border-radius:50%;
+    cursor:pointer;
+    transition:500ms ease-in-out;
+    background: coral;
+}
+.icons img:hover{
+    height: 9rem;
+    width: 9rem;
+}
+
+.clash{
+    position:relative;
+    display:block;
+    width:100vw;
+    height: 10rem;
+    border:1px solid white;
+}
+.clash img{
+    position:absolute;
+    height:6rem;
+    width:6rem;
+    bottom:3px;
+}
+.clash img:nth-child(1){
+    left:-6rem;  
+}
+.clash img:nth-child(2){
+    right:-6rem;
+}
+
+.roll-right.active{
+    animation-name: roll-right;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4000ms;
+    animation-fill-mode: both;
+}
+.roll-left.active{
+    animation-name:roll-left;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4000ms;
+    animation-fill-mode: both;
+}
+.controls{
+    display: flex;
+}
+.controls button{
+    background-color:transparent;
+    padding: 5px;
+    color:var(--main-dark-font-color);
+    margin: 0 .5rem;
+    font-size: 1.5em;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+}
+.controls svg{
+    margin:5px;
+}
+.start-game{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.start-game img{
+    border-radius: 10px;
+    height:10rem;
+    width:15rem;
+
+}
+.start-game button{
+    margin:2rem 0;
+    font-size:1.5em;
+    background-color:transparent;
+    color:var(--main-dark-font-color);
+    border:1px white solid;
+    padding:5px;
+    cursor:pointer;
+    transition:500ms;
+}
+.start-game button:hover{
+    background-color: white;
+    color:black;
+}
+
+
+
+/* Animations */
+@keyframes roll-right{
+    from {
+        transform: translateX(0) rotateX(0); 
+    }
+    to {
+        transform:translateX(var(--rrTransValue)) rotate(3turn); 
+    }
+}
+@keyframes roll-left{
+    from {
+        transform: translateX(0) rotateX(0); 
+    }
+    to {
+        transform:translateX(var(--rlTransValue)) rotate(-3turn); 
+    }
+}
