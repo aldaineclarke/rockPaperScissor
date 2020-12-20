@@ -154,6 +154,8 @@ input{
     justify-content: center;
     align-items: center;
     flex-wrap:nowrap;
+    text-align: center;
+
 }
 .hand-signs{
     display:flex;
