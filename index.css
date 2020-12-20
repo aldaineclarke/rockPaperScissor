@@ -156,10 +156,7 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap:nowrap;
     text-align: center;
-    justify-content:center;
-
 }
 .hand-signs{
     display:flex;
