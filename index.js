@@ -69,14 +69,9 @@ let selected_sign;
         if ( selected_sign === "rock"){
             player1.choice = rock;
         }else if( selected_sign === "paper"){
-            console.log("This was a paper selected;");
             player1.choice = paper;
-            console.log(player1.choice);
-
         }else if ( selected_sign === "scissor"){
-            console.log("This was a scissor selected;");
             player1.choice = scissor;
-
         }else{
             return;
         }
