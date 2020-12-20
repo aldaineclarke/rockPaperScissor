@@ -101,6 +101,7 @@ const iconScreen = document.querySelector(".icons");
 const overlay = document.querySelector(".overlay");
 const new_game = document.querySelector(".start-game");
 const controls = document.querySelector(".controls");
+const winner_screen = document.querySelector(".winner");
 let rightBrawler = document.querySelector(".roll-left");
 let leftBrawler = document.querySelector(".roll-right");
 let userScore = document.querySelector("#p1Score");
@@ -156,8 +157,22 @@ function startClash(){
         userScore.innerText =`${player1.score}`;
         compScore.innerText = `${comp1.score}`;
         hideOrshow(controls);
+        if(player1.score === 5 || comp1.score === 5){
+            hideOrshow(overlay); 
+            if (player1.score === 5){
+                winner_screen.innerText = ` Congratulations ${player1.name} you won.`;
+            }else if(comp1.score ===5 ){
+                winner_screen.innerText = "You lost the war."
+            }
+            setTimeout(()=>{
+                winner_screen.innerText = "";
+                hideOrshow(overlay);
+                newGame();
 
+            },3000)
+        }
     },4000)//because this is the time it takes for the animation moving signs to end.
+
 
 
 }
@@ -248,6 +263,10 @@ function resetAnimation(){
     rightBrawler.classList.remove("bold");
     result.innerText = " ";
     console.log(result)
+
+}
+function finalResult(){
+    hideOrshow(overlay);
 
 }
 
