@@ -1,63 +1,4 @@
 "use strict;";
-
-
-/*
- **Start the Game**
- collect the node for start button
- when the page is loaded it should show the start game section.
- when the button for start game is clicked. the start game section should be hidden.
- the choices for hand signs should then be visible as it awaits user choice.
- add events to each hand sign.
- after the hand sign is chosen then the computer will select a random hand choice;
- assign the image of the hand sign chosen to the right image. while assign the image of the computer chosen to the left image tag.. Then have a count down from three to add the active class to the image elements in the clash.
- if the choice selected by the user is the same as the choice selected by the computer then there is a draw, z-index=4 to the left image.
- else if the choice selected by the user has a weakness to the one selected by the computer then the user wins add the z-index=4 to the right image.
- else if the choice selected by the computer has a weakness to the one selected by the user then the computer wins.
- if the computer wins then add one to the score of the computer
- if the user wins then add one to the score of the user
- if there is a draw then no one gets a score.
- display result on the screen.
-
- **Update Score**
- gets the score for 
-
-// Using OOP
- **Player object**
-
- create a class for a which will take no parameter.
- player must have a score
- player must have a name;
- player must have a method to update score.
- player must have a method to reset score.
- player must also have a method called autoDecide. which will make the computer decide.
-
-
- **Choice Object**
-create a class for the choice 
-choice should have a name 
-choice should have a weakness
-choice must have a method called victory.
-
-//functions
-hideOrshow:
-takes in an element and then checks to see if there is a class attached with the name hidden
-if there is then it will show that element by removing the hidden class
-if not then it will add the hidden class to that element that was passed in.
-
-startClash:
-this will add active to the images that are encased in the clash class primarily 
-before doing this there will be a countdown 3 2 1 then both images will begin rolling to the center.
-there may also be other effects included which will take place in this function.
-
-calculateClash:
-this will check to see if the choice of both the user and the computer are similar or whoever wins.
-this will call the methods to update scores etc.
-
-
-identify all the icons for the game.
-check to see which of the hand signs that was selected.
-*/
-
 class Player{
     constructor(name="comp1"){
         this.name = name;
@@ -174,7 +115,6 @@ function startClash(){
     },4000)//because this is the time it takes for the animation moving signs to end.
 
 
-
 }
 function assignBrawlers(){
     rightBrawler.setAttribute("src",`/${comp1.choice.name}.jpg`);
@@ -265,8 +205,5 @@ function resetAnimation(){
     console.log(result)
 
 }
-function finalResult(){
-    hideOrshow(overlay);
 
-}
 
