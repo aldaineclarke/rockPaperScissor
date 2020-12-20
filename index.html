@@ -12,56 +12,63 @@
         <nav class="navbar">
             <a href="" class="brand">RPS</a>
             <ul>
-                <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="overlay"></div>
         <div class="start-game">
-            <img src="/rock-paper-scissors-hand-icons.jpg" alt=""  hidden="true">
-            <button class="start" hidden="true">Start Game</button>
+            <img src="/rock-paper-scissors-hand-icons.jpg" alt="Logo with all hand signs for rock paper scissors">
+            <form name="collectName" method="post" onsubmit="getUserName();return false;">
+                <input type="text" name="username" id="username" value="User1" placeholder="Enter name here " maxlength="9">
+                <button class="start">New Game</button>
+            </form>
+            
         </div>
-        <div class="icons">
-            <img src="/rock.jpg" alt="rock image" title="rock">
-            <img src="/paper.jpg" alt="paper image"title="paper">
-            <img src="/scissor.jpg" alt="scissor image" title="scissor">
+        <div class="icons hidden ">
+            <div class="hand-signs">
+                <img src="/rock.jpg" alt="rock image" title="rock">
+                <img src="/paper.jpg" alt="paper image"title="paper">
+                <img src="/scissor.jpg" alt="scissor image" title="scissor">
+            </div>
+            <h1>Choose your power</h1>
+            
         </div>
         <section class="player-info">
             <h1>Rock Paper Scissor</h1>
             <div class="scores">
                 <span>Score Board</span>
                 <div class="score">
-                    <p>User</p>
-                    <p id="player1">0</p>
+                    <p id="userName">User</p>
+                    <p id="p1Score">0</p>
                 </div>
                 <div class="score">
                     <p>Computer</p>
-                    <p id="player2">0</p>
+                    <p id="p2Score">0</p>
                 </div>                
             </div>
         </section>
         <section class="gameplay">
             <div id="results">
-                <p class="result">There was a draw</p>
+                <p class="result"></p>
                 <div class="clash">
                     
-                    <img class="roll-right active" src="/rock.jpg" alt="rock image">
-                    <img class ="roll-left active" src="/paper.jpg" alt="paper image">                
+                    <img class="roll-right" src="/rock.jpg" alt="rock image">
+                    <img class ="roll-left" src="/paper.jpg" alt="paper image">                
                 </div>
             </div>
             
-            <div class="controls">
-                <button>Reset Scores</button>
-                <button>
+            <div class="controls hidden">
+                <button onclick="resetScore();">Reset Scores</button>
+                <button onclick="playAgain();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                         <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                         <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                       </svg>
                     
                     Play Again</button>
+                <button onclick="newGame();">New Game</button>
             </div>
 
         </section>
@@ -70,6 +77,6 @@
     <footer>
 
     </footer>
-    
+    <script src="/index.js"></script>
 </body>
 </html>
