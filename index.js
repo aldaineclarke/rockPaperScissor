@@ -194,6 +194,7 @@ function resetAnimation(){
     rightBrawler.classList.toggle("active");
     leftBrawler.classList.remove("bold");
     rightBrawler.classList.remove("bold");
+    result.innerText="";
 
 }
 
