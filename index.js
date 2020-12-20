@@ -112,8 +112,8 @@ function startClash(){
 
 }
 function assignBrawlers(){
-    rightBrawler.setAttribute("src",`/${comp1.choice.name}.jpg`);
-    leftBrawler.setAttribute("src", `/${player1.choice.name}.jpg`);
+    rightBrawler.setAttribute("src",`${comp1.choice.name}.jpg`);
+    leftBrawler.setAttribute("src", `${player1.choice.name}.jpg`);
 
 }
 function calculateClash(player, computer){
