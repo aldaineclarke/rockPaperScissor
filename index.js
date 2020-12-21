@@ -12,7 +12,7 @@ class Player{
         this.score = 0;
     }
     autoDecide(){
-        let choices = [rock,paper,scissor]
+        let choices = [rock,paper,scissors]
         let randChoice = Math.floor(Math.random()*choices.length);
         this.choice = choices[randChoice];
     
@@ -22,15 +22,15 @@ class Player{
 let rock = {
     name:"rock",
     weakness:"paper",
-    strength:"scissor",
+    strength:"scissors",
 }
 let paper = {
     name:"paper",
-    weakness:"scissor",
+    weakness:"scissors",
     strength:"rock",
 }
-let scissor = {
-    name:"scissor",
+let scissors = {
+    name:"scissors",
     weakness:"rock",
     strength:"paper",
 }
@@ -70,8 +70,8 @@ let selected_sign;
             player1.choice = rock;
         }else if( selected_sign === "paper"){
             player1.choice = paper;
-        }else if ( selected_sign === "scissor"){
-            player1.choice = scissor;
+        }else if ( selected_sign === "scissors"){
+            player1.choice = scissors;
         }else{
             return;
         }
