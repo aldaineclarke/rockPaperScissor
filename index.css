@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root{
     --main-dark-bg-color: darkslateblue;
@@ -13,6 +14,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 main{
     min-height: 100vh;
@@ -26,7 +28,6 @@ body{
 img{
     height: 4rem;
     width: 4rem;
-    border-radius:50%;
 }
 .navbar{
     background-color: #0B7CED;
@@ -145,6 +146,9 @@ input{
     flex-direction:column;
     align-items: center;
     color:var(--main-dark-font-color);
+}
+.gameplay img{
+    border-radius:50%;
 }
 .icons{
     position:absolute;
@@ -292,6 +296,33 @@ input{
     text-align: center;
 }
 
+.intro{
+    margin-top:15px;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+
+}
+.intro img{
+    margin:10px;
+    width:450px;
+    height:250px;
+    box-shadow: 2px 4px 7px 3px rgba(0, 0, 0, .19);
+}
+.description{
+    padding:15px;
+    color:rgb(30, 25, 63);
+    font-size:larger;
+}
+.description p{
+    margin:10px 0;
+}
+.description a{
+    text-decoration: none;
+    font-weight:600;
+    color:rgb(114, 103, 189);
+
+}
 
 /* Animations */
 @keyframes roll-right{
